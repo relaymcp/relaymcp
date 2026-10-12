@@ -1,0 +1,21 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "app.relaymcp/whatsapp",
+  "title": "RelayMCP",
+  "description": "Hosted per-user MCP server for your personal WhatsApp: reminders, follow-ups, summaries and one-to-one replies, with privacy controls.",
+  "version": "0.1.0",
+  "websiteUrl": "https://relaymcp.app",
+  "repository": { "url": "https://github.com/relaymcp/relaymcp", "source": "github" },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://{user}-mcp.relaymcp.app/mcp",
+      "variables": {
+        "user": { "description": "Your RelayMCP user handle, shown in your dashboard", "isRequired": true }
+      },
+      "headers": [
+        { "name": "Authorization", "description": "Optional if using OAuth: 'Bearer rmcp_live_...' API key from your dashboard", "isRequired": false, "isSecret": true }
+      ]
+    }
+  ]
+}
